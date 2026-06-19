@@ -1,0 +1,172 @@
+/* ========================================
+   order.css — Order / Checkout Page
+   MealBox Platform
+   ======================================== */
+
+#page-order .order-hero {
+  padding: 32px 48px 0;
+}
+
+#page-order .order-hero h1 {
+  font-family: var(--font-head);
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+#page-order .order-hero p { color: var(--muted); }
+
+.order-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+  padding: 32px 48px;
+  align-items: start;
+}
+
+/* Form Section */
+.order-form-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  margin-bottom: 16px;
+}
+
+.order-form-section h2 {
+  font-family: var(--font-head);
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+/* Payment Options */
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.pay-opt {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pay-opt:hover {
+  border-color: var(--orange);
+  background: var(--orange-soft);
+}
+
+.pay-opt.selected {
+  border-color: var(--orange);
+  background: var(--orange-soft);
+}
+
+.pay-opt-icon { font-size: 22px; margin-bottom: 6px; }
+.pay-opt-name { font-size: 13px; font-weight: 500; }
+
+/* Order Summary / Cart */
+.order-summary {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  position: sticky;
+  top: 88px;
+}
+
+.order-summary h3 {
+  font-family: var(--font-head);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cart-item:last-child { border: none; }
+
+.cart-item-emoji {
+  font-size: 28px;
+  width: 48px; height: 48px;
+  background: var(--bg);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cart-item-info { flex: 1; }
+.cart-item-name { font-size: 14px; font-weight: 500; }
+.cart-item-qty  { font-size: 12px; color: var(--muted); }
+
+.cart-item-price {
+  font-weight: 700;
+  color: var(--orange);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* Empty cart */
+.cart-empty {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--muted);
+}
+.cart-empty-icon { font-size: 40px; margin-bottom: 12px; }
+
+/* Summary Totals */
+.summary-total {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.total-row.final {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.total-row.final span:last-child { color: var(--orange); }
+
+.confirm-btn {
+  width: 100%;
+  margin-top: 16px;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .order-layout {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .payment-grid { grid-template-columns: repeat(2, 1fr); }
+  #page-order .order-hero { padding: 24px 20px 0; }
+}
